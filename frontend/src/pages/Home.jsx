@@ -17,7 +17,7 @@ const Home = () => {
         setLoading(true);
 
         axios
-            .get("https://book-store-backend-7o21.onrender.com/books")
+            .get("https://book-store-backend-ccvg.onrender.com/books")
             .then((res) => {
                 setBooks(res.data.data);
                 setLoading(false);
