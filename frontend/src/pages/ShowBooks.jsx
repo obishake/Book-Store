@@ -12,7 +12,7 @@ const ShowBooks = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get(`https://book-store-backend-ccvg.onrender.com/books/${id}`)
+            .get(`${import.meta.env.VITE_URL}/${id}`)
             .then((responce) => {
                 setBook(responce.data);
                 setLoading(false);

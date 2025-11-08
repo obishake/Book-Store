@@ -14,7 +14,7 @@ const DeleteBooks = () => {
     const handleDeleteBook = () => {
         setLoading(true);
         axios
-            .delete(`https://book-store-backend-ccvg.onrender.com/books/${id}`)
+            .delete(`${import.meta.env.VITE_URL}/${id}`)
             .then((responce) => {
                 setLoading(false);
                 enqueueSnackbar("Book Deleted successfully", {

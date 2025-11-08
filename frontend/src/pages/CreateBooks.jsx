@@ -21,7 +21,7 @@ const CreateBooks = () => {
         };
         setLoading(false);
         axios
-            .post("https://book-store-backend-ccvg.onrender.com/books", data)
+            .post(`${import.meta.env.VITE_URL}`, data)
             .then(() => {
                 setLoading(false);
                 enqueueSnackbar("Book created successfully", {

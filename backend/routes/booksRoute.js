@@ -3,9 +3,6 @@ import { Book } from "../models/bookModels.js"
 
 const router = express.Router();
 
-
-
-
 //Route for save a new Book
 router.post("/", async (request, response) => {
     try {
@@ -42,6 +39,7 @@ router.get("/", async (request, response) => {
             count: books.length,
             data: books,
         });
+        
     } catch (error) {
         console.log(error);
         response.status(500).send({ message: error.message });
@@ -70,7 +68,7 @@ router.put("/:id", async (request, response) => {
             !request.body.author ||
             !request.body.publishYear
         ) {
-            return response.status(400).send({
+            return response.status(404).send({
                 message: "Send all required fields: title, author, publishYesr",
             });
         }

@@ -18,7 +18,7 @@ const EditBooks = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get(`https://book-store-backend-ccvg.onrender.com/books/${id}`)
+            .get(`${import.meta.env.VITE_URL}/${id}`)
             .then((responce) => {
                 setAuthor(responce.data.author);
                 setPublishYear(responce.data.publishYear);
@@ -41,7 +41,7 @@ const EditBooks = () => {
         setLoading(false);
         axios
             .put(
-                `https://book-store-backend-ccvg.onrender.com/books/${id}`,
+                `${import.meta.env.VITE_URL}/${id}`,
                 data
             )
             .then(() => {
