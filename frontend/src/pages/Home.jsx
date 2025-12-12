@@ -16,14 +16,17 @@ const Home = () => {
     useEffect(() => {
         setLoading(true);
 
+        const apiUrl = import.meta.env.VITE_URL || 'http://localhost:5555';
+        
         axios
-            .get(`${import.meta.env.VITE_URL}`)
+            .get(`${apiUrl}/books`)
             .then((res) => {
-                setBooks(res.data.data);
+                setBooks(res.data?.data || []);
                 setLoading(false);
             })
             .catch((err) => {
-                console.log(err);
+                console.log('Error fetching books:', err);
+                setBooks([]);
                 setLoading(false);
             });
     }, []);
