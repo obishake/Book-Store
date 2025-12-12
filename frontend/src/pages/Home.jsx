@@ -16,8 +16,8 @@ const Home = () => {
     useEffect(() => {
         setLoading(true);
 
-        const apiUrl = import.meta.env.VITE_URL || 'http://localhost:5555';
-        
+        const apiUrl = import.meta.env.VITE_URL || "http://localhost:5555";
+
         axios
             .get(`${apiUrl}/books`)
             .then((res) => {
@@ -25,7 +25,7 @@ const Home = () => {
                 setLoading(false);
             })
             .catch((err) => {
-                console.log('Error fetching books:', err);
+                console.log("Error fetching books:", err);
                 setBooks([]);
                 setLoading(false);
             });
