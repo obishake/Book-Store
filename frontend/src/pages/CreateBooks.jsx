@@ -21,7 +21,7 @@ const CreateBooks = () => {
         };
         setLoading(false);
         axios
-            .post(`${import.meta.env.VITE_URL}`, data)
+            .post(`${import.meta.env.VITE_URL}/books`, data)
             .then(() => {
                 setLoading(false);
                 enqueueSnackbar("Book created successfully", {

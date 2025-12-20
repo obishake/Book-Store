@@ -27,7 +27,7 @@ app.use(cors());
 
 app.get("/", (req, res) => {
     console.log(req);
-    return res.status(234).send("Welcome backend tutorial");
+    return res.status(234).send("backend is running...");
 });
 
 app.use("/books", booksRoute);

@@ -18,7 +18,7 @@ const EditBooks = () => {
     useEffect(() => {
         setLoading(true);
         axios
-            .get(`${import.meta.env.VITE_URL}/${id}`)
+            .get(`${import.meta.env.VITE_URL}/books/${id}`)
             .then((responce) => {
                 setAuthor(responce.data.author);
                 setPublishYear(responce.data.publishYear);
